@@ -1,0 +1,10 @@
+{
+  "name": "Skeleton Loading on Link Click",
+  "about_url": "https://meta.discourse.org",
+  "license_url": "https://github.com/discourse/discourse/blob/main/LICENSE.txt",
+  "authors": "Your Name",
+  "theme_version": "1.0.0",
+  "minimum_discourse_version": "2.8.0",
+  "maximum_discourse_version": null,
+  "about": "Adds skeleton loading animations when links are clicked in Discourse"
+}
