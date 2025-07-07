@@ -1,0 +1,147 @@
+// Skeleton loading base styles
+.skeleton-loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+  &.active {
+    opacity: 1;
+  }
+}
+
+.dark-mode .skeleton-loading-overlay {
+  background: rgba(34, 34, 34, 0.9);
+}
+
+// Skeleton elements
+.skeleton-item {
+  background: #f0f0f0;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  
+  &.skeleton-header {
+    height: 60px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  &.skeleton-line {
+    height: 20px;
+    margin-bottom: 10px;
+    
+    &:nth-child(odd) {
+      width: 85%;
+    }
+    
+    &:nth-child(even) {
+      width: 92%;
+    }
+    
+    &.short {
+      width: 60%;
+    }
+  }
+  
+  &.skeleton-paragraph {
+    height: 15px;
+    margin-bottom: 8px;
+    
+    &:last-child {
+      width: 70%;
+    }
+  }
+  
+  &.skeleton-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  &.skeleton-button {
+    width: 100px;
+    height: 35px;
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+.dark-mode .skeleton-item {
+  background: #3d3d3d;
+}
+
+// Animation styles
+.skeleton-loading-overlay.pulse .skeleton-item {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-loading-overlay.shimmer .skeleton-item {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 2s ease-in-out infinite;
+}
+
+.skeleton-loading-overlay.fade .skeleton-item {
+  animation: skeleton-fade 1s ease-in-out infinite alternate;
+}
+
+.dark-mode .skeleton-loading-overlay.shimmer .skeleton-item {
+  background: linear-gradient(90deg, #3d3d3d 25%, #4d4d4d 50%, #3d3d3d 75%);
+  background-size: 200% 100%;
+}
+
+// Keyframes
+@keyframes skeleton-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes skeleton-fade {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .skeleton-loading-overlay {
+    padding: 15px;
+  }
+  
+  .skeleton-item.skeleton-header {
+    height: 50px;
+  }
+  
+  .skeleton-item.skeleton-line {
+    height: 18px;
+  }
+}
