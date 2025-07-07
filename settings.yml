@@ -1,0 +1,25 @@
+skeleton_loading_enabled:
+  type: bool
+  default: true
+  description: "Enable skeleton loading animations on link clicks"
+
+skeleton_loading_duration:
+  type: integer
+  default: 1000
+  min: 500
+  max: 3000
+  description: "Duration of skeleton loading animation in milliseconds"
+
+skeleton_loading_style:
+  type: enum
+  default: "pulse"
+  choices:
+    - pulse
+    - shimmer
+    - fade
+  description: "Style of skeleton loading animation"
+
+exclude_external_links:
+  type: bool
+  default: true
+  description: "Don't show skeleton loading for external links"
